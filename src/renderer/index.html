@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevTask Manager</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="header">
+        <div class="header-title">DevTask Manager</div>
+        <div class="view-switcher">
+          <button class="view-button active">Kanban</button>
+          <button class="view-button">List</button>
+          <button class="view-button">Calendar</button>
+          <button class="view-button">Timeline</button>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="board-column">
+          <div class="column-header">
+            <span>To Do</span>
+            <span class="task-count">3</span>
+          </div>
+          <div class="task-list" id="todo">
+            <div class="task-card">
+              <div class="task-title">Implement User Authentication</div>
+              <div class="task-meta">
+                <span>#DEV-123</span>
+                <span>2d</span>
+              </div>
+              <div class="task-labels">
+                <span class="task-label label-feature">Feature</span>
+              </div>
+            </div>
+            <div class="task-card">
+              <div class="task-title">Fix Navigation Bug</div>
+              <div class="task-meta">
+                <span>#DEV-124</span>
+                <span>1d</span>
+              </div>
+              <div class="task-labels">
+                <span class="task-label label-bug">Bug</span>
+              </div>
+            </div>
+            <button class="add-task-btn">+ Add Task</button>
+          </div>
+        </div>
+
+        <div class="board-column">
+          <div class="column-header">
+            <span>In Progress</span>
+            <span class="task-count">2</span>
+          </div>
+          <div class="task-list" id="in-progress">
+            <div class="task-card">
+              <div class="task-title">Implement Dark Mode</div>
+              <div class="task-meta">
+                <span>#DEV-125</span>
+                <span>3d</span>
+              </div>
+              <div class="task-labels">
+                <span class="task-label label-feature">Feature</span>
+              </div>
+            </div>
+            <button class="add-task-btn">+ Add Task</button>
+          </div>
+        </div>
+
+        <div class="board-column">
+          <div class="column-header">
+            <span>Review</span>
+            <span class="task-count">1</span>
+          </div>
+          <div class="task-list" id="review">
+            <div class="task-card">
+              <div class="task-title">Code Review: API Integration</div>
+              <div class="task-meta">
+                <span>#DEV-126</span>
+                <span>1d</span>
+              </div>
+              <div class="task-labels">
+                <span class="task-label label-feature">Feature</span>
+              </div>
+            </div>
+            <button class="add-task-btn">+ Add Task</button>
+          </div>
+        </div>
+
+        <div class="board-column">
+          <div class="column-header">
+            <span>Done</span>
+            <span class="task-count">2</span>
+          </div>
+          <div class="task-list" id="done">
+            <div class="task-card">
+              <div class="task-title">Setup Project Structure</div>
+              <div class="task-meta">
+                <span>#DEV-127</span>
+                <span>Complete</span>
+              </div>
+              <div class="task-labels">
+                <span class="task-label label-feature">Feature</span>
+              </div>
+            </div>
+            <button class="add-task-btn">+ Add Task</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="../node_modules/sortablejs/Sortable.min.js"></script>
+    <script src="../node_modules/localforage/dist/localforage.min.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

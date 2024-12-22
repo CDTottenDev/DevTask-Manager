@@ -1,0 +1,39 @@
+{
+  "name": "dev-task-manager",
+  "version": "1.0.0",
+  "description": "Developer Task Management Application",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.devtaskmanager.app",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "electron-builder": "^25.1.8",
+    "electron-squirrel-startup": "^1.0.0",
+    "localforage": "^1.10.0",
+    "sortablejs": "^1.15.6"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1"
+  }
+}

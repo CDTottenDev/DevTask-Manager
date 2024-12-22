@@ -1,0 +1,186 @@
+:root {
+  --primary-bg: #1a1b26;
+  --secondary-bg: #24283b;
+  --border-color: #414868;
+  --text-primary: #a9b1d6;
+  --text-secondary: #787c99;
+  --accent-color: #7aa2f7;
+  --success-color: #9ece6a;
+  --warning-color: #e0af68;
+  --danger-color: #f7768e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--secondary-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-right: 2rem;
+}
+
+.view-switcher {
+  display: flex;
+  gap: 1rem;
+}
+
+.view-button {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-button.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-bg);
+}
+
+.view-button:hover:not(.active) {
+  border-color: var(--accent-color);
+}
+
+.main-content {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.board-column {
+  flex: 0 0 300px;
+  background: var(--secondary-bg);
+  border-radius: 8px;
+  max-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  padding: 1rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-count {
+  background: var(--border-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+}
+
+.task-list {
+  padding: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.task-card {
+  background: var(--primary-bg);
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: move;
+  border: 1px solid var(--border-color);
+}
+
+.task-card:hover {
+  border-color: var(--accent-color);
+}
+
+.task-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.task-labels {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.task-label {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.label-bug {
+  background: var(--danger-color);
+  color: var(--primary-bg);
+}
+
+.label-feature {
+  background: var(--success-color);
+  color: var(--primary-bg);
+}
+
+.add-task-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px dashed var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.add-task-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
